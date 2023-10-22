@@ -93,7 +93,7 @@ open class MessagesCollectionView: UICollectionView {
     // calculate the offset and reloadData
     let beforeContentSize = contentSize
     reloadData()
-    layoutIfNeeded()
+    //layoutIfNeeded()
     let afterContentSize = contentSize
 
     // reset the contentOffset after data is updated
