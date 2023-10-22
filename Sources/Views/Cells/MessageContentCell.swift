@@ -216,7 +216,7 @@ open class MessageContentCell: MessageCollectionViewCell {
     case .cellLeading:
       origin.x = padding
     case .cellTrailing:
-      origin.x = attributes.frame.width - attributes.avatarSize.width - padding
+      origin.x = attributes.frame.width - attributes.avatarSize.width - padding + 100
     case .natural:
       fatalError(MessageKitError.avatarPositionUnresolved)
     }
@@ -272,7 +272,7 @@ open class MessageContentCell: MessageCollectionViewCell {
       origin.x = attributes.avatarSize.width + attributes.messageContainerPadding.left + avatarPadding
     case .cellTrailing:
       origin.x = attributes.frame.width - attributes.avatarSize.width - attributes.messageContainerSize.width - attributes
-        .messageContainerPadding.right - avatarPadding
+        .messageContainerPadding.right - avatarPadding + attributes.avatarSize.width
     case .natural:
       fatalError(MessageKitError.avatarPositionUnresolved)
     }
