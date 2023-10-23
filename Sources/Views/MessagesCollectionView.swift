@@ -81,18 +81,9 @@ open class MessagesCollectionView: UICollectionView {
 
   // NOTE: It's possible for small content size this wouldn't work - https://github.com/MessageKit/MessageKit/issues/725
     public func scrollToLastItem(at pos: UICollectionView.ScrollPosition = .bottom, animated: Bool = true) {
-        guard let indexPath = indexPathForLastItem else { return }
-        
-        // Adjust content inset to add 10px spacing at the bottom
-        let originalContentInset = self.contentInset
-        self.contentInset = UIEdgeInsets(top: originalContentInset.top, left: originalContentInset.left, bottom: originalContentInset.bottom + 4, right: originalContentInset.right)
-        
-        scrollToItem(at: indexPath, at: pos, animated: animated)
-        
-        // Reset the content inset after the scroll
-        DispatchQueue.main.asyncAfter(deadline: .now() + (animated ? 0.3 : 0)) {
-            self.contentInset = originalContentInset
-        }
+      guard let indexPath = indexPathForLastItem else { return }
+
+      scrollToItem(at: indexPath, at: pos, animated: animated)
     }
 
   public func reloadDataAndKeepOffset() {
@@ -185,7 +176,7 @@ open class MessagesCollectionView: UICollectionView {
 
   /// Display the date of message by swiping left.
   /// The default value of this property is `false`.
-  internal var showMessageTimestampOnSwipeLeft = false
+  internal var showMessageTimestampOnSwipeLeft = true
 
   // MARK: - Typing Indicator API
 

@@ -336,7 +336,7 @@ open class MessagesViewController: UIViewController, UICollectionViewDelegateFlo
     inputContainerView.translatesAutoresizingMaskIntoConstraints = false
 
     NSLayoutConstraint.activate([
-        messagesCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: UINavigationController().navigationBar.frame.height + (UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame.height)!),
+      messagesCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: UINavigationController().navigationBar.frame.height + (UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame.height)!),
       messagesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       messagesCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
       messagesCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
